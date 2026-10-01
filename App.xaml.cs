@@ -562,6 +562,7 @@ public partial class App : Application
         services.AddSingleton<ITrainerService, TrainerService>();
         services.AddSingleton<ITrainerAutoLaunchService, TrainerAutoLaunchService>();
         services.AddSingleton<ISteamAchievementService, SteamAchievementService>();
+        services.AddSingleton<ISteamNativeMultiplayerService, SteamNativeMultiplayerService>();
         services.AddSingleton<SteamTicketExtractor>();
         services.AddSingleton<IAuthorizationService, AuthorizationService>();
         services.AddSingleton<IDialogService, DialogService>();
