@@ -451,9 +451,12 @@ public sealed class SteamNativeMultiplayerService : ISteamNativeMultiplayerServi
         if (string.IsNullOrWhiteSpace(key))
             throw new ArgumentException("Lobby metadata key 不能为空。", nameof(key));
 
-        if (key.Length > Constants.k_nMaxLobbyKeyLength)
+        // Steam Lobby metadata key 的实际约束由 Steamworks 定义；这里采用保守上限，
+        // 避免把具体 SDK 版本的内部常量暴露到业务层。
+        const int maxKeyLength = 255;
+        if (key.Length > maxKeyLength)
             throw new ArgumentException(
-                $"Lobby metadata key 不能超过 {Constants.k_nMaxLobbyKeyLength} 个字符。",
+                $"Lobby metadata key 不能超过 {maxKeyLength} 个字符。",
                 nameof(key));
     }
 
