@@ -30,6 +30,8 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
     <PackageReference Include="SharpCompress" Version="0.50.4" />
     <PackageReference Include="SteamKit2" Version="3.4.0" />
+    <!-- Valve Steamworks API 的 C# 封装；Lobby/邀请层使用真实 Steam AppID。 -->
+    <PackageReference Include="Steamworks.NET" Version="2024.8.0" />
     <PackageReference Include="Tomlyn" Version="2.10.1" />
   </ItemGroup>
 
